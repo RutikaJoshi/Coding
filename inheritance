@@ -1,0 +1,68 @@
+Class Address
+{
+    String addressLine;
+    String city;
+    String zip;
+    
+    Adress(String addressLine,String city, String zip)
+    {
+       this.addressLine =addressLine;
+       this.city =city;
+       this.zip = zip;
+       
+    }
+}
+class NaturalPerson extends Address
+{
+      Integer id;
+      String name;
+      Date dateOfBirth;
+      Integer age;
+      Address address;
+
+      Public getData(Integer id,String name,Date dateOfBirth,Integer age,Address address)
+      {
+        this.id = id;
+        this.name = name;
+        this.dateOfBirth =dateOfBirth;
+        this.age =age;
+        this.address =address;
+      }
+      public setData()
+      {
+        System.out.println("id"+id+"name"+name+"dateOfBirth"+dateOfBirth+"age"+age+"address"+address);
+      }
+}
+
+class LegalPerson extends Address
+{
+      Integer id;
+      String name;
+      Integer numberOfEmployees;
+      Address address;
+
+      Public getData(Integer id,String name,Integer numberOfEmployees,Address address)
+      {
+        this.id = id;
+        this.name = name;
+        this.numberOfEmployees =numberOfEmployees;
+        this.address =address;
+      }
+      public setData()
+      {
+        System.out.println("id"+id+"name"+name+"numberOfEmployees"+numberOfEmployees+"address"+address);
+      }
+}
+class TestInheritance{
+public static void main(String[] args)
+{
+    Address LegalPersonAddress = new Address("Delhi","Noida","123456");
+    LegalPerson LP = new LegalPerson();
+    LP.setData(101,"John",2,LegalPersonAddress);
+    LP.getData();
+    
+    Address NaturalPersonAddress = new Address("Delhi","Noida","123456");
+    NaturalPerson LP = new NaturalPerson();
+    LP.setData(101,"John","20 Oct 1995",26,NaturalPersonAddress);
+    LP.getData();
+}
